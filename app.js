@@ -1,22 +1,36 @@
+//
+// var http=require('http');
+// function  onRequest(req,res) {
+//     if (req.url === '/favicon.ico') {
+//        // res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+//
+//         res.status(204);
+//         res.end();
+//         console.log('favicon requested');
+//         return;
+//     }
+//     res.writeHead(200,{'Content Type':'text/plain'});
+//     res.write("hi");
+//     res.end();
+//
+//
+// }
+//
+// http.createServer(onRequest).listen(process.env.PORT);
 
-var http=require('http');
-function  onRequest(req,res) {
-    if (req.url === '/favicon.ico') {
-       // res.writeHead(200, {'Content-Type': 'image/x-icon'} );
 
-        res.status(204);
-        res.end();
-        console.log('favicon requested');
-        return;
+var express=require('express')
+var app=express();
+app.set('port',(process.env.PORT||5000))
+app.set('view engine','ejs');
+app.use('/',express.static(__dirname+"/public"))
+
+
+app.listen(app.get('port'),function () {
+
     }
-    res.writeHead(200,{'Content Type':'text/plain'});
-    res.write("hi");
-    res.end();
+);
 
-
-}
-
-http.createServer(onRequest).listen(process.env.PORT);
 
 
 //
