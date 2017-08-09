@@ -16,7 +16,7 @@ function  onRequest(req,res) {
 
 }
 
-http.createServer(onRequest).listen(5000);
+http.createServer(onRequest).listen(process.env.PORT || 5000);
 
 
 // var express=require('express');
