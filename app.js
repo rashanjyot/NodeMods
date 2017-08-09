@@ -1,3 +1,4 @@
+/*
 
 var http=require('http');
 function  onRequest(req,res) {
@@ -17,6 +18,28 @@ function  onRequest(req,res) {
 }
 
 http.createServer(onRequest).listen(process.env.PORT || 5000);
+
+*/
+
+
+var http=require('http');
+function  onRequest(req,res) {
+    // if (req.url === '/favicon.ico') {
+    //     res.writeHead(200, {'Content-Type': 'image/x-icon'} );
+    //
+    //     res.status(204);
+    //     res.end();
+    //     console.log('favicon requested');
+    //     return;
+    // }
+    res.writeHead(200,{'Content-Type':'text/plain'});
+    res.write("hi");
+    res.end();
+
+
+}
+
+http.createServer(onRequest).listen(process.env.PORT || 8055);
 
 
 // var express=require('express');
