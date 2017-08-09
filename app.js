@@ -1,35 +1,38 @@
-//
-// var http=require('http');
-// function  onRequest(req,res) {
-//     if (req.url === '/favicon.ico') {
-//        // res.writeHead(200, {'Content-Type': 'image/x-icon'} );
-//
-//         res.status(204);
-//         res.end();
-//         console.log('favicon requested');
-//         return;
-//     }
-//     res.writeHead(200,{'Content Type':'text/plain'});
-//     res.write("hi");
-//     res.end();
-//
-//
-// }
-//
-// http.createServer(onRequest).listen(process.env.PORT);
 
+var http=require('http');
+function  onRequest(req,res) {
+    if (req.url === '/favicon.ico') {
+        res.writeHead(200, {'Content-Type': 'image/x-icon'} );
 
-var express=require('express')
-var app=express();
-app.set('port',(process.env.PORT||5000))
-app.set('view engine','ejs');
-app.use('/',express.static(__dirname+"/public/abc.html"))
-
-
-app.listen(app.get('port'),function () {
-
+        res.status(204);
+        res.end();
+        console.log('favicon requested');
+        return;
     }
-);
+    res.writeHead(200,{'Content-Type':'text/plain'});
+    res.write("hi");
+    res.end();
+
+
+}
+
+http.createServer(onRequest).listen(5000);
+
+
+// var express=require('express');
+// var app=express();
+// app.set('port',(process.env.PORT||5000))
+// app.set('view engine','ejs');
+// app.use('/',express.static(__dirname+"/public/abc.html"))
+//
+//
+//
+// app.listen(3232,function () {
+// console.log("Running");
+//     }
+// );
+
+
 
 
 
