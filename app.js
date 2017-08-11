@@ -33,7 +33,7 @@ function  onRequest(req,res) {
     //     return;
     // }
     res.writeHead(200,{'Content-Type':'text/plain'});
-    res.write("hi");
+    res.write("hi hi hi");
     res.end();
 
 
